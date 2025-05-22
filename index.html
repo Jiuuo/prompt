@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>밥 추천 사이트 🍚</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #fff8dc; /* 옅은 크림색 배경 */
+            color: #7a5901; /* 짙은 갈색 텍스트 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.2em;
+            color: #d4a017; /* 햇살 노란색 */
+            text-shadow: 1px 1px 2px #a67c00;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2em;
+            color: #b08900;
+        }
+
+        button {
+            background: linear-gradient(135deg, #f7dc6f, #f4d03f);
+            border: none;
+            border-radius: 12px;
+            padding: 15px 35px;
+            font-size: 1.5rem;
+            color: #5a3e00;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(242, 202, 50, 0.5);
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #f4d03f, #f7dc6f);
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(242, 202, 50, 0.7);
+        }
+
+        #recommendation {
+            margin-top: 3em;
+            font-size: 2rem;
+            font-weight: 600;
+            background: #fff3b0;
+            border-radius: 12px;
+            padding: 20px 30px;
+            box-shadow: 0 4px 10px rgba(215, 175, 0, 0.3);
+            max-width: 320px;
+            color: #6e5100;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>🍚 오늘의 밥 추천</h1>
+    <p>무엇을 먹을지 고민될 때, 눌러보세요!</p>
+
+    <button onclick="recommendFood()">추천받기</button>
+    <div id="recommendation"></div>
+
+    <script>
+        const foods = [
+            "김치찌개",
+            "불고기",
+            "비빔밥",
+            "치킨",
+            "된장찌개",
+            "떡볶이",
+            "초밥",
+            "라면",
+            "피자",
+            "파스타"
+        ];
+
+        function recommendFood() {
+            const randomIndex = Math.floor(Math.random() * foods.length);
+            const food = foods[randomIndex];
+            document.getElementById('recommendation').textContent = `오늘은 "${food}" 어떠세요? 🍽️`;
+        }
+    </script>
+</body>
+</html>
+
